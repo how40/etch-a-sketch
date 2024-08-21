@@ -22,7 +22,7 @@ let createGrid = size => {
             
             //pen trail
             square.addEventListener("mouseover", () => {
-                square.style.backgroundColor = 'blue'
+                square.style.backgroundColor = randomColor();
             });
 
             row.appendChild(square);
@@ -32,6 +32,14 @@ let createGrid = size => {
     }
 
 }//EOF
+
+let randomColor = () => {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    const rgb = `rgb(${r},${g},${b})`;
+    return rgb;
+}
 
 let deleteGrid = () => {
     while (container.firstChild) {
